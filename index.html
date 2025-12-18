@@ -2,25 +2,27 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Ailary</title>
+  <title>Agenly</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <header>
-    <h1>Ailary</h1>
+  <header class="header">
+    <h1 class="logo">Agenly</h1>
+
     <input
       type="text"
       id="search"
       placeholder="Search AI tools or agents"
     />
+
     <div class="tabs">
       <button class="tab active" data-type="tools">Tools</button>
       <button class="tab" data-type="agents">Agents</button>
     </div>
   </header>
 
-  <main id="cards"></main>
+  <main id="cards" class="cards"></main>
 
   <script src="app.js"></script>
 </body>
