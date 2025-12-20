@@ -1,54 +1,68 @@
-const data = {
-  tools: [
-    {
-      name: "Email Automation",
-      description: "Automate email writing and follow-ups"
-    },
-    {
-      name: "SEO Optimizer",
-      description: "Improve website SEO using AI"
-    }
-  ],
-  agents: [
-    {
-      name: "Sales Agent",
-      description: "AI agent for outbound sales and lead follow-up"
-    },
-    {
-      name: "Support Agent",
-      description: "Handles customer support queries 24/7"
-    }
-  ]
-};
-
-let currentType = "tools";
-
-const cardsContainer = document.getElementById("cards");
-const tabs = document.querySelectorAll(".tab");
-
-function renderCards() {
-  cardsContainer.innerHTML = "";
-
-  data[currentType].forEach(item => {
-    const card = document.createElement("div");
-    card.className = "card";
-
-    card.innerHTML = `
-      <h3>${item.name}</h3>
-      <p>${item.description}</p>
-    `;
-
-    cardsContainer.appendChild(card);
-  });
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background: white;
+  color: black;
 }
 
-tabs.forEach(tab => {
-  tab.addEventListener("click", () => {
-    tabs.forEach(t => t.classList.remove("active"));
-    tab.classList.add("active");
-    currentType = tab.dataset.type;
-    renderCards();
-  });
-});
+header {
+  max-width: 900px;
+  margin: auto;
+}
 
-renderCards();
+h1 {
+  margin-bottom: 10px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+nav button {
+  padding: 10px 20px;
+  margin-right: 10px;
+  border: 1px solid black;
+  background: white;
+  cursor: pointer;
+}
+
+nav button.active {
+  background: black;
+  color: white;
+}
+
+main {
+  max-width: 900px;
+  margin: auto;
+}
+
+#cardsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.card {
+  border: 1px solid black;
+  padding: 15px;
+  cursor: pointer;
+}
+
+.card:hover {
+  background: #f2f2f2;
+}
+
+.hidden {
+  display: none;
+}
+
+#backBtn {
+  margin-bottom: 20px;
+  padding: 8px 16px;
+  border: 1px solid black;
+  background: white;
+  cursor: pointer;
+}
