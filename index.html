@@ -1,29 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <title>Agenly</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Angely</title>
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      padding: 30px;
+    }
+
+    input {
+      width: 60%;
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+
+    .card {
+      border: 1px solid black;
+      padding: 20px;
+      width: 250px;
+      margin: 20px auto;
+      cursor: pointer;
+      text-align: left;
+    }
+
+    #detail {
+      display: none;
+      max-width: 500px;
+      margin: auto;
+      text-align: left;
+    }
+  </style>
 </head>
 <body>
 
-  <header class="header">
-    <h1 class="logo">Agenly</h1>
+  <!-- MAIN SCREEN -->
+  <div id="main">
+    <h1>Angely</h1>
 
-    <input
-      type="text"
-      id="search"
-      placeholder="Search AI tools or agents"
-    />
+    <input placeholder="Search tools or agents" />
 
-    <div class="tabs">
-      <button class="tab active" data-type="tools">Tools</button>
-      <button class="tab" data-type="agents">Agents</button>
+    <div class="card" onclick="openDetail()">
+      <h3>Email Automation</h3>
+      <p>Automate email writing</p>
     </div>
-  </header>
+  </div>
 
-  <main id="cards" class="cards"></main>
+  <!-- DETAIL SCREEN -->
+  <div id="detail">
+    <button onclick="goBack()">← Back</button>
+    <h2>Email Automation</h2>
+    <p>This tool helps automate emails.</p>
+    <button>Use Tool</button>
+  </div>
 
-  <script src="app.js"></script>
+  <script>
+    function openDetail() {
+      document.getElementById("main").style.display = "none";
+      document.getElementById("detail").style.display = "block";
+    }
+
+    function goBack() {
+      document.getElementById("detail").style.display = "none";
+      document.getElementById("main").style.display = "block";
+    }
+  </script>
+
 </body>
 </html>
